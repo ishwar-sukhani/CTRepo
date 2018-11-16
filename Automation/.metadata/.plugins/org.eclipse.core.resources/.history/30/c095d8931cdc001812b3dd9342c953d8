@@ -1,0 +1,30 @@
+package com.examples.java;
+
+public class MinMaxFromArray {
+	
+	int min, max;
+	
+	public int findMin(int arr[]){
+		min = arr[0];
+		for(int i : arr){
+			if(min > arr[i]){
+				min = arr[i];
+			}
+		}
+		return min;
+	}
+	
+	public int findMax(int arr[]){
+		max = arr[arr.length -1];
+		for(int i : arr){
+			if(max < arr[i]){
+				max = arr[i];
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+
+	}
+
+}

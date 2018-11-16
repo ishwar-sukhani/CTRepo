@@ -1,0 +1,9 @@
+git init
+
+git remote add softedgeRepo https://github.com/ishwar-sukhani/softedgeRepo.git
+
+git add .
+
+git commit -m "Some Commit Message"
+
+git push -u softedgeRepo master

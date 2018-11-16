@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="34" started-at="2018-06-15T07:23:49Z" finished-at="2018-06-15T07:23:49Z">
+    <groups>
+    </groups>
+    <test name="Test2" duration-ms="33" started-at="2018-06-15T07:23:49Z" finished-at="2018-06-15T07:23:49Z">
+      <class name="parallel.ClassB">
+        <test-method status="PASS" signature="methodB1()[pri:0, instance:parallel.ClassB@675d3402]" name="methodB1" duration-ms="7" started-at="2018-06-15T12:53:49Z" finished-at="2018-06-15T12:53:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- methodB1 -->
+        <test-method status="PASS" signature="methodB2()[pri:0, instance:parallel.ClassB@675d3402]" name="methodB2" duration-ms="4" started-at="2018-06-15T12:53:49Z" finished-at="2018-06-15T12:53:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- methodB2 -->
+      </class> <!-- parallel.ClassB -->
+    </test> <!-- Test2 -->
+    <test name="Test1" duration-ms="31" started-at="2018-06-15T07:23:49Z" finished-at="2018-06-15T07:23:49Z">
+      <class name="parallel.ClassA">
+        <test-method status="PASS" signature="methodA1()[pri:0, instance:parallel.ClassA@215be6bb]" name="methodA1" duration-ms="7" started-at="2018-06-15T12:53:49Z" finished-at="2018-06-15T12:53:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- methodA1 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:parallel.ClassA@215be6bb]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-06-15T12:53:49Z" finished-at="2018-06-15T12:53:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="methodA2()[pri:0, instance:parallel.ClassA@215be6bb]" name="methodA2" duration-ms="4" started-at="2018-06-15T12:53:49Z" finished-at="2018-06-15T12:53:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- methodA2 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:parallel.ClassA@215be6bb]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-06-15T12:53:49Z" finished-at="2018-06-15T12:53:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- parallel.ClassA -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Suite -->
+</testng-results>

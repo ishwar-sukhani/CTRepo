@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example.serenity</groupId>
+	<artifactId>Serenity_BDD</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+		<!-- Selenium Dependencies -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.53.1</version>
+		</dependency>
+
+		<!-- Serenity Dependencies -->
+		<dependency>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-core</artifactId>
+			<version>1.4.1-rc.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-cucumber</artifactId>
+			<version>1.1.35</version>
+		</dependency>
+
+		<!-- Cucumber Dependencies -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- This Plug-in is included in order to ignore failures in Test Execution -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+					<includes>
+						<include>src/main/java/com/example/serenity/MainRunner.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+
+			<!-- This Plug-in is included to run Integration tests. This plugin runs 
+				your integration test in the integration-test phase without immediately failing 
+				the build when a test fails. Build failure is triggered later in the lifecycle, 
+				during the verify phase -->
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<includes>
+						<include>src/main/java/com/example/serenity/MainRunner.java</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>net.serenity-bdd.maven.plugins</groupId>
+				<artifactId>serenity-maven-plugin</artifactId>
+				<version>1.0.6</version>
+				<dependencies>
+					<dependency>
+						<groupId>net.serenity-bdd</groupId>
+						<artifactId>serenity-core</artifactId>
+						<version>1.4.1-rc.6</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>serenity-reports</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>aggregate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
